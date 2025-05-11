@@ -12,5 +12,10 @@ public class Main {
                 .or((User::getStatus).eq(1).and(User::getVipLevel).ge(3))
                 .execute();
 
+
+        UserMapperImpl userMapper = new UserMapperImpl();
+        userMapper.update(new User());
+        org.deml.User userById = userMapper.getUserById(1L);
+        userMapper.insertBatch()
     }
 }

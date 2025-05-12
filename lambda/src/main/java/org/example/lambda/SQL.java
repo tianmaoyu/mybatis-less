@@ -167,7 +167,7 @@ public class SQL<T> {
         }
 
         public ValueCollector<T> add(SFunction<T, Object> columnGetter, Object value) {
-            sqlBuilder.VALUES(columnGetter, value);
+            sqlBuilder.values(columnGetter, value);
             return this;
         }
     }

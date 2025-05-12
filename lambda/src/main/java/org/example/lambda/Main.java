@@ -48,4 +48,19 @@ public class Main {
         // 输出: SELECT * FROM person LEFT JOIN order ON id = person_id WHERE name = 'Alice' AND id = 1
 
     }
+
+    public String selectPersonLike( Long id,  String firstName,  String lastName) {
+        return new SQL() {{
+            select(Person::getId,Person::getFirstName,Person::getLastName);
+            from(Person.class);
+            if (id != null)
+                where(Person::getId).eq(id);
+            if (firstName != null)
+                where(Person::getFirstName).like(firstName);
+            if (lastName != null)
+                where(Person::getLastName).like(lastName);
+            order_by(Person::getLastName);
+        }}.toString();
+    }
+
 }

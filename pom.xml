@@ -8,6 +8,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>lambda</module>
+        <module>lambda2</module>
     </modules>
 
     <properties>

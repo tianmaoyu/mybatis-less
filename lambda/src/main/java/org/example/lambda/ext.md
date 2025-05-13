@@ -28,13 +28,16 @@ public class SQL {
         });
 
         // 嵌套 OR 组
-        orGroup(sql -> {
+        or(sql -> {
             sql.where(Person::getAge).gt(18);
             sql.where(Person::getStatus).eq("ACTIVE");
         });
 
-
+`java
 and(g1 -> {
     g1.or(g2 -> { ... });
     g1.and(g3 -> { ... });
 });
+
+`
+
